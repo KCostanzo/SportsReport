@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  defaults: {format: :json}
+  namespace defaults: {format: :json} do
+  end
 end
