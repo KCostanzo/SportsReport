@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  defaults: {format: :json}
+=======
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +56,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+>>>>>>> cd37962ad5bb1a7624b6deb682dbc6264f652a0e
 end
