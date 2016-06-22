@@ -11,6 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 
 node_modules
 public/assets/**
@@ -18,3 +19,5 @@ public/assets/**
 
 **/bundle.js
 **/bundle.js.map
+=======
+>>>>>>> cd37962ad5bb1a7624b6deb682dbc6264f652a0e
