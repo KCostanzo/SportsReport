@@ -1,0 +1,27 @@
+.navbar-container {
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  top: 0px;
+  z-index: 100000;
+  background: #444;
+  left: 0px;
+  line-height: 45px;
+  font-family: 'Noto Sans', sans-serif;
+
+  li, ul {
+    display: inline-block;
+    float: left;
+    margin: 0 10px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  ul {
+    letter-spacing: .1em;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
