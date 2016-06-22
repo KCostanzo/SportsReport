@@ -1,8 +1,12 @@
 var React = require('react'),
-    ReactDOM = require('react-rom'),
+    ReactDOM = require('react-dom'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
+    IndexRoute = require('react-router').IndexRoute,
     hashHistory = require('react-router').hashHistory;
+
+var MainDisplay = require('./components/index');
+
 
 var App = React.createClass({
   render: function() {
@@ -16,7 +20,7 @@ var App = React.createClass({
 
 var routes = (
   <Route path ='/' component={App}>
-
+    <IndexRoute component={MainDisplay} />
   </Route>
 );
 
