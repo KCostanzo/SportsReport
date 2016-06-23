@@ -13,9 +13,9 @@ var ScoreItem = React.createClass({
 		// console.log(away_name_abbrev + ' ' + home_name_abbrev);
 		return (
 			<div className='current-score'>
-			{away_score},{home_score}
+			{away_score} <br/>{home_score}
 			</div>
-			)
+		);
 	},
 
 	recordDisplay: function() {
@@ -24,11 +24,11 @@ var ScoreItem = React.createClass({
 		var home_win = this.props.score.home_win;
 		var home_loss = this.props.score.home_loss;
 		return (
-			<div className='current-score'>
-			{away_win}-{away_loss} <br/>
-			{home_win}-{home_loss}
+			<div className='current-record'>
+				{away_win}-{away_loss} <br/>
+				{home_win}-{home_loss}
 			</div>
-			)
+		);
 	},
 
 	teamDisplay: function() {
@@ -36,7 +36,7 @@ var ScoreItem = React.createClass({
 		var home_name_abbrev = this.props.score.home_name_abbrev;
 		return (
 			<div className='team-names'>{away_name_abbrev} <br/> {home_name_abbrev} </div>
-			)
+			);
 	},
 
 	render: function() {

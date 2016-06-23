@@ -5,4 +5,39 @@
   border-bottom: 2px solid black;
   width: 100%;
   left: 0px;
+  background: #efefef;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-family: 
+      top: -13px;
+      position: relative;
+      width: 5.5em;
+      height: 59px;
+      display: flex;
+      padding-top: 1em;
+      padding-left: 0.6em;
+      padding-right: 0.6em;
+      border: 2px solid black;
+      float: left;
+
+    }
+
+    .team-names {
+    }
+
+    .current-record {
+      float: right;
+      position: relative;
+      margin-left: auto;
+    }
+
+    .current-score {
+      float: left;
+      position: relative;
+      margin-left: auto;
+    }
+  }
 }
