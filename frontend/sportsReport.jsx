@@ -5,13 +5,17 @@ var React = require('react'),
     IndexRoute = require('react-router').IndexRoute,
     hashHistory = require('react-router').hashHistory;
 
-var MainDisplay = require('./components/index');
+var MainDisplay = require('./components/index'),
+    Navbar = require('./components/navbar'),
+    Scorebar = require('./components/scores/scores');
 
 
 var App = React.createClass({
   render: function() {
     return (
       <div>
+        <Navbar />
+        <Scorebar />
         {this.props.children}
       </div>
     );
