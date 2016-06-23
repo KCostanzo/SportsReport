@@ -12,7 +12,7 @@ var resetScores = function(scores) {
 		_scores[score.id] = score;
 		// debugger;
 	})
-	console.log(scores.data.games.game)
+	// console.log(scores.data.games.game)
 
 	ScoreStore.__emitChange();
 };
