@@ -6,7 +6,8 @@ var React = require('react'),
     hashHistory = require('react-router').hashHistory;
 
 var MainDisplay = require('./components/index'),
-    Navbar = require('./components/navbar');
+    Navbar = require('./components/navbar'),
+    Scorebar = require('./components/scores/scores');
 
 
 var App = React.createClass({
@@ -14,6 +15,7 @@ var App = React.createClass({
     return (
       <div>
         <Navbar />
+        <Scorebar />
         {this.props.children}
       </div>
     );
