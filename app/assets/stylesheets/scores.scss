@@ -11,11 +11,13 @@
     list-style-type: none;
 
     li {
-      font-family: 
+      font-size: .87em;
+      font-family: 'Source Sans', sans-serif;
+      font-weight: 400;
       top: -13px;
       position: relative;
-      width: 5.5em;
-      height: 59px;
+      width: 5.8em;
+      height: 61px;
       display: flex;
       padding-top: 1em;
       padding-left: 0.6em;
@@ -25,7 +27,9 @@
 
     }
 
-    .team-names {
+    .team-names, .current-record, .current-score {
+      position: relative;
+      top: 1em;
     }
 
     .current-record {
