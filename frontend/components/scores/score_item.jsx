@@ -6,7 +6,7 @@ var ScoreItem = React.createClass({
   render: function() {
     return (
       <div>
-        <li className="score-item">{this.props.score}</li>
+        <li className="score-item">{this.props.score.location}</li>
       </div>
     );
   }
