@@ -21,8 +21,12 @@
     letter-spacing: .1em;
   }
 
-  li {
+  li, li:hover {
     cursor: pointer;
+  }
+
+  li:hover {
+    color: #79BDC8;
   }
 
   .logo {

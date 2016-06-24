@@ -2,55 +2,54 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var ScoreItem = React.createClass({
-
-
-
 	scoreDisplay: function() {
 		console.log(this.props.score.linescore.r.away);
-		var away_score = this.props.score.linescore.r.away;
-		var home_score = this.props.score.linescore.r.home;
-		// var location = this.props.score.loaction;
-		// console.log(away_name_abbrev + ' ' + home_name_abbrev);
+		var awayScore = this.props.score.linescore.r.away;
+		var homeScore = this.props.score.linescore.r.home;
+
 		return (
 			<div className='current-score'>
-			{away_score},{home_score}
+			{awayScore} <br />{homeScore}
 			</div>
-			)
+		);
 	},
 
 	recordDisplay: function() {
-		var away_win = this.props.score.away_win;
-		var away_loss = this.props.score.away_loss;
-		var home_win = this.props.score.home_win;
-		var home_loss = this.props.score.home_loss;
+		var awayWin = this.props.score.away_win;
+		var awayLoss = this.props.score.away_loss;
+		var homeWin = this.props.score.home_win;
+		var homeLoss = this.props.score.home_loss;
 		return (
-			<div className='current-score'>
-			{away_win}-{away_loss} <br/>
-			{home_win}-{home_loss}
+			<div className='current-record'>
+				{awayWin}-{awayLoss} <br />
+				{homeWin}-{homeLoss}
 			</div>
-			)
+		);
 	},
 
 	teamDisplay: function() {
-		var away_name_abbrev = this.props.score.away_name_abbrev;
-		var home_name_abbrev = this.props.score.home_name_abbrev;
+		var awayNameAbbrev = this.props.score.away_name_abbrev;
+		var homeNAmeAbbrev = this.props.score.home_name_abbrev;
 		return (
-			<div className='team-names'>{away_name_abbrev} <br/> {home_name_abbrev} </div>
-			)
+			<div className='team-names'>
+				{awayNameAbbrev} <br /> {homeNAmeAbbrev}
+			</div>
+			);
 	},
 
 	render: function() {
+		var scores;
 		if (this.props.score.linescore) {
-			var scores = this.scoreDisplay();
+			scores = this.scoreDisplay();
 		} else {
-			var scores = this.recordDisplay();
+			scores = this.recordDisplay();
 		}
-		// debugger;
+
 		return (
 	  		<div className='score-item-container'>
 	   			 <li className="score-item">{this.teamDisplay()}  {scores}</li>
 	  		</div>
-	);
+			);
 	}
 
 });
