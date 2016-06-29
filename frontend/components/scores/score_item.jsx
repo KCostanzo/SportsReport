@@ -37,6 +37,8 @@ var ScoreItem = React.createClass({
 			);
 	},
 
+	//commenting
+
 	render: function() {
 		var scores;
 		if (this.props.score.linescore) {

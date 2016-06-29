@@ -11,7 +11,7 @@ var resetScores = function(scores) {
 	scores.data.games.game.forEach(function(score) {
 		_scores[score.id] = score;
 	});
-
+	
 	ScoreStore.__emitChange();
 };
 
