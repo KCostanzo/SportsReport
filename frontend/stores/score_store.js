@@ -8,11 +8,12 @@ var _scores = {};
 
 var resetScores = function(scores) {
 	_scores = {};
-	scores.data.games.game.forEach(function(score) {
-		_scores[score.id] = score;
-		// debugger;
-	})
-	// console.log(scores.data.games.game)
+	// scores.data.games.game.forEach(function(score) {
+	// 	_scores[score.id] = score;
+	// 	// debugger;
+	// })
+	console.log(scores);
+	debugger;
 
 	ScoreStore.__emitChange();
 };
