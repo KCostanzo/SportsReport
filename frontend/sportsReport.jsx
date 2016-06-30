@@ -3,7 +3,8 @@ var React = require('react'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
-    hashHistory = require('react-router').hashHistory;
+    hashHistory = require('react-router').hashHistory,
+    Modal = require('react-modal');
 
 var MainDisplay = require('./components/index'),
     Navbar = require('./components/navbar'),
@@ -29,6 +30,7 @@ var routes = (
 );
 
 document.addEventListener('DOMContentLoaded', function() {
+  Modal.setAppElement(document.body);
   ReactDOM.render(
     <Router history={hashHistory}>{routes}</Router>,
       document.getElementById('root')

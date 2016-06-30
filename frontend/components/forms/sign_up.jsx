@@ -1,8 +1,7 @@
 var React = require('react');
-var SessionUtil = require('../../util/session_util');
 var Modal = require('react-modal');
+var SessionUtil = require('../../util/session_util');
 var SessionStore = require('../../stores/session_store');
-
 
 module.exports = React.createClass ({
   getInitialState: function() {
@@ -44,7 +43,7 @@ module.exports = React.createClass ({
   render: function() {
     return (
       <div>
-      <button className="unlogged" onClick={this.openModal} disabled={this.props.currentlyClicked}>Sign Up</button>
+      <li className="unlogged" onClick={this.openModal} disabled={this.props.currentlyClicked}>Sign Up</li>
 
       <Modal className='modal' isOpen={this.state.modalOpen} onRequestClose={this.closeModal}>
        <div className='exit' onClick={this.closeModal}>X</div>

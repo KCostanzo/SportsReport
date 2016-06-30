@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var SignUp = require('./forms/sign_up');
 
 var Navbar = React.createClass({
 
@@ -13,6 +14,9 @@ var Navbar = React.createClass({
           <li>Hockey</li>
           <li>Soccer</li>
           <li>Baseball</li>
+        </ul>
+        <ul className="login">
+          <SignUp>SignUp</SignUp>
         </ul>
       </div>
     );

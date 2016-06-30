@@ -38,7 +38,7 @@ var ScoreItem = React.createClass({
 	},
 
 	statusDisplay: function() {
-		
+
 	},
 
 	render: function() {
