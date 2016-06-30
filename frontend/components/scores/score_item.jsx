@@ -27,6 +27,16 @@ var ScoreItem = React.createClass({
 			inningState = 'Bot';
 		};
 
+		// if (time[0] === '1') {
+		// 	time = 10 + time.slice(1,4);
+		// } else if (time[0] === '2') {
+		// 	time = 11 + time.slice(1,4);
+		// } else if (time[0] === '3') {
+		// 	time = 12 + time.slice(1,4);
+		// } else {
+		// 	time = parseInt(time.slice(0,1)) - 3 + time.slice(1,4)
+		// }
+
 		if (gameStatus === 'In Progress') {
 			return (
 				<div className='game-status'>
@@ -71,7 +81,7 @@ var ScoreItem = React.createClass({
 	//commenting
 
 	render: function() {
-		console.log(this.props.score);
+		// console.log(this.props.score);
 		var scores;
 		if (this.props.score.linescore) {
 			scores = this.scoreDisplay();
