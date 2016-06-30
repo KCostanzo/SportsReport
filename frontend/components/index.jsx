@@ -24,7 +24,10 @@ var Index = React.createClass({
 
   render: function() {
     return (
-      <div></div>
+      <div className="index-container">
+				game stats + data visualization will update here depending on what
+				game you select
+      </div>
     );
   }
 

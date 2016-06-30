@@ -6,9 +6,13 @@
   width: 100%;
   left: 0px;
   background: #efefef;
+  list-style-type: none;
+  overflow-y: hidden;
+  white-space: nowrap;
+  overflow-x: scroll;
 
   ul {
-    list-style-type: none;
+    display: inline-flex;
 
     li {
       font-size: .87em;
@@ -24,6 +28,7 @@
       padding-right: 0.6em;
       border: 2px solid black;
       float: left;
+      left: -40px;
 
     }
 
@@ -42,6 +47,12 @@
       float: left;
       position: relative;
       margin-left: auto;
+    }
+
+    li:hover {
+      opacity: 0.7;
+      cursor: pointer;
+      color: #79BDC8;
     }
   }
 }
