@@ -43,6 +43,12 @@
       position: relative;
       margin-left: auto;
     }
+
+    li:hover {
+      opacity: 0.7;
+      cursor: pointer;
+      color: #79BDC8;
+    }
   }
 }
 
