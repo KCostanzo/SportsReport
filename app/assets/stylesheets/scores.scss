@@ -16,7 +16,7 @@
       font-weight: 400;
       top: -13px;
       position: relative;
-      width: 5.8em;
+      width: 6.2em;
       height: 61px;
       display: flex;
       padding-top: 1em;
@@ -29,7 +29,7 @@
 
     .team-names, .current-record, .current-score {
       position: relative;
-      top: 1em;
+      top: 1.5em;
     }
 
     .current-record {
@@ -44,4 +44,15 @@
       margin-left: auto;
     }
   }
+}
+
+.game-status {
+  color: red;
+}
+
+.game-status, .diff-status {
+  position: absolute;
+  font-size: .5em;
+  font-weight: 700;
+  letter-spacing: .05em;
 }

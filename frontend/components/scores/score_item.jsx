@@ -3,7 +3,7 @@ var PropTypes = React.PropTypes;
 
 var ScoreItem = React.createClass({
 	scoreDisplay: function() {
-		console.log(this.props.score.linescore.r.away);
+		// console.log(this.props.score.linescore.r.away);
 		var awayScore = this.props.score.linescore.r.away;
 		var homeScore = this.props.score.linescore.r.home;
 
@@ -12,6 +12,37 @@ var ScoreItem = React.createClass({
 			{awayScore} <br />{homeScore}
 			</div>
 		);
+	},
+
+	statusDisplay: function() {
+		var gameStatus = this.props.score.status.status;
+		var inning = this.props.score.status.inning;
+		var inningState = this.props.score.status.inning_state;
+		var outs = this.props.score.status.o;
+
+		var time = this.props.score.time;
+		var zone = this.props.score.time_zone;
+
+		if (inningState === 'Bottom'){
+			inningState = 'Bot';
+		};
+
+		if (gameStatus === 'In Progress') {
+			return (
+				<div className='game-status'>
+				{inning}  {inningState} {outs} outs
+				</div>
+				)
+		} else if (gameStatus === 'Preview'){
+			return <div className='diff-status'>{time} {zone}</div>
+
+		} else {
+			return (
+			<div className='diff-status'>
+			Final
+			</div>
+			)
+		}
 	},
 
 	recordDisplay: function() {
@@ -40,6 +71,7 @@ var ScoreItem = React.createClass({
 	//commenting
 
 	render: function() {
+		console.log(this.props.score);
 		var scores;
 		if (this.props.score.linescore) {
 			scores = this.scoreDisplay();
@@ -49,10 +81,11 @@ var ScoreItem = React.createClass({
 
 		return (
 	  		<div className='score-item-container'>
-	   			 <li className="score-item">{this.teamDisplay()}  {scores}</li>
+	   			 <li className="score-item">{this.statusDisplay()} {this.teamDisplay()}  {scores}</li>
 	  		</div>
 			);
 	}
+
 
 });
 
