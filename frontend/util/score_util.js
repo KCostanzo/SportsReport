@@ -4,7 +4,6 @@ var ScoreUtil = {
 	fetchAllScores: function () {
 		var date = new Date();
 		var month = date.getMonth() + 1;
-		//+1 becasue getMonth() gives us the previous month
 		var year = date.getFullYear();
 		var day = date.getDate();
 		var digits = [1,2,3,4,5,6,7,8,9];

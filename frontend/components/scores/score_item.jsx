@@ -3,7 +3,7 @@ var PropTypes = React.PropTypes;
 
 var ScoreItem = React.createClass({
 	scoreDisplay: function() {
-		console.log(this.props.score.linescore.r.away);
+		console.log(this.props.score);
 		var awayScore = this.props.score.linescore.r.away;
 		var homeScore = this.props.score.linescore.r.home;
 
@@ -36,8 +36,6 @@ var ScoreItem = React.createClass({
 			</div>
 			);
 	},
-
-	//commenting
 
 	render: function() {
 		var scores;
