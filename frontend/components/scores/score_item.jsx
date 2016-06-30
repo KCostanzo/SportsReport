@@ -3,7 +3,6 @@ var PropTypes = React.PropTypes;
 
 var ScoreItem = React.createClass({
 	scoreDisplay: function() {
-		// console.log(this.props.score.linescore.r.away);
 		var awayScore = this.props.score.linescore.r.away;
 		var homeScore = this.props.score.linescore.r.home;
 
@@ -25,8 +24,9 @@ var ScoreItem = React.createClass({
 
 		if (inningState === 'Bottom'){
 			inningState = 'Bot';
-		};
+		}
 
+		// Pacific Time possibility
 		// if (time[0] === '1') {
 		// 	time = 10 + time.slice(1,4);
 		// } else if (time[0] === '2') {
@@ -40,18 +40,13 @@ var ScoreItem = React.createClass({
 		if (gameStatus === 'In Progress') {
 			return (
 				<div className='game-status'>
-				{inning}  {inningState} {outs} outs
+				{inning}  {inningState} {outs} Outs
 				</div>
-				)
+			);
 		} else if (gameStatus === 'Preview'){
-			return <div className='diff-status'>{time} {zone}</div>
-
+			return <div className='diff-status'>{time} {zone}</div>;
 		} else {
-			return (
-			<div className='diff-status'>
-			Final
-			</div>
-			)
+			return <div className='diff-status'>Final</div>;
 		}
 	},
 
@@ -77,8 +72,6 @@ var ScoreItem = React.createClass({
 			</div>
 			);
 	},
-
-	//commenting
 
 	render: function() {
 		// console.log(this.props.score);

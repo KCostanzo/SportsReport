@@ -4,7 +4,7 @@ var PropTypes = React.PropTypes;
 var ScoreStore = require('../../stores/score_store');
 var ScoreItem = require('./score_item');
 
-var TempUtil = require('../../util/score_util.js')
+var TempUtil = require('../../util/score_util.js');
 
 var Scores = React.createClass({
   getInitialState: function() {

@@ -15,7 +15,7 @@ var Index = React.createClass({
 	},
 
 	newsChange: function() {
-		this.setState({stories: NewsStore.topStories()})
+		this.setState({stories: NewsStore.topStories()});
 	},
 
 	componentWillUnmount: function() {

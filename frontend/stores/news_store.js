@@ -8,13 +8,6 @@ var _news = {};
 
 var resetNews = function(news) {
 	_news = {};
-	console.log(news);
-	debugger;
-
-	// news.data.games.game.forEach(function(score) {
-	// 	_news[score.id] = score;
-	// });
-	
 	NewsStore.__emitChange();
 };
 
