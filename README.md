@@ -17,6 +17,13 @@
 
 # Design Docs
 
+## Wireframes
+
+###Display Bar
+
+![bar]
+
+[bar]: ./data/bar.png
 
 # Phase 1: React / Front End Basics
 
