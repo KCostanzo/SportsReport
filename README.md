@@ -25,6 +25,12 @@
 
 [bar]: ./data/bar.png
 
+###Data Visualizer
+
+![data]
+
+[data]: ./data/DataVisualWire.png
+
 # Phase 1: React / Front End Basics
 
 - [ ] Create Project
