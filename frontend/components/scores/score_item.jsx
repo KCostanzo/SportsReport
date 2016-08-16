@@ -74,7 +74,7 @@ var ScoreItem = React.createClass({
 	},
 
 	render: function() {
-		// console.log(this.props.score);
+		 console.log(this.props.score);
 		var scores;
 		if (this.props.score.linescore) {
 			scores = this.scoreDisplay();
