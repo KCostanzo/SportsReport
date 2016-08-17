@@ -5,6 +5,12 @@ var Dispatcher = require('../dispatcher/dispatcher.js');
 var ScoreStore = new Store(Dispatcher);
 
 var _scores = {};
+var _currentGame = {};
+
+var setGame = function(game) {
+	_currentGame = game;
+	ScoreStore.__emitChange();
+};
 
 var resetScores = function(scores) {
 	_scores = {};
@@ -24,10 +30,17 @@ ScoreStore.all = function() {
 	return scores;
 };
 
+ScoreStore.currentGame = function() {
+	return _currentGame;
+};
+
 ScoreStore.__onDispatch = function(payload) {
 	switch(payload.actionType) {
 		case StoreConstants.ALLSCORES:
 			resetScores(payload.scores);
+			break;
+		case StoreConstants.SETGAME:
+			setGame(payload.game);
 			break;
 	}
 };

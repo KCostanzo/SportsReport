@@ -19,6 +19,7 @@ var Scores = React.createClass({
 
   scoreChange: function() {
     this.setState({scores: ScoreStore.all()});
+    // debugger;
   },
 
   componentWillUnmount: function() {

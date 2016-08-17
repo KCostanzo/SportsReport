@@ -1,5 +1,8 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var VisualItem = require('../visual_item');
+var Index = require('../index');
+var ScoreAction = require('../../actions/score_server_actions');
 
 var ScoreItem = React.createClass({
 	scoreDisplay: function() {
@@ -73,13 +76,16 @@ var ScoreItem = React.createClass({
 			);
 	},
 
-	//testing github
-	//fake lines of code
+	activateVisuals: function() {
+		// debugger;
+		// VisualItem.setGame(this.props.score);
+		// Index.setGame(this.props.score);
 
-	///making space
+		ScoreAction.setGame(this.props.score);
+	},
 
 	render: function() {
-		// console.log(this.props.score);
+		console.log(this.props.score);
 		var scores;
 		if (this.props.score.linescore) {
 			scores = this.scoreDisplay();
@@ -89,7 +95,7 @@ var ScoreItem = React.createClass({
 
 		return (
 	  		<div className='score-item-container'>
-	   			 <li className="score-item">{this.statusDisplay()} {this.teamDisplay()}  {scores}</li>
+	   			 <li onClick={this.activateVisuals} className="score-item">{this.statusDisplay()} {this.teamDisplay()}  {scores}</li>
 	  		</div>
 			);
 	}

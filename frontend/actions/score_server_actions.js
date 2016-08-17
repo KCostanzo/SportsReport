@@ -8,6 +8,13 @@ var ScoreActions = {
 			scores: scores
 		});
 	},
+
+	setGame: function(game) {
+		Dispatcher.dispatch({
+			actionType: ScoreConstants.SETGAME,
+			game: game
+		});
+	}
 };
 
 module.exports = ScoreActions;
