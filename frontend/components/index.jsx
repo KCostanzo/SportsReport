@@ -2,31 +2,34 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Stories = require('./news/index_item');
 var NewsUtil = require('../util/news_util');
-var NewsStore = require('../stores/news_store');
+var ScoreStore = require('../stores/score_store');
+var Visualizer = require('./visual_item');
 
 var Index = React.createClass({
 	getInitialState: function() {
-		return {stories: []};
+		return {currentGame: {}}
 	},
+
+	// setGame: function(game) {
+	// 	this.setState({currentGame: {game} });
+	// },
 
 	componentDidMount: function() {
-		this.newsListener = NewsStore.addListener(this.newsChange);
-		NewsUtil.fetchTopStories();
+		this.scoreListen = ScoreStore.addListener(this.gameChange);
 	},
 
-	newsChange: function() {
-		this.setState({stories: NewsStore.topStories()});
+	gameChange: function() {
+		this.setState({currentGame: ScoreStore.currentGame()});
 	},
 
 	componentWillUnmount: function() {
-		this.newsListener.remove();
+		this.scoreListen.remove();
 	},
 
   render: function() {
     return (
       <div className="index-container">
-				game stats + data visualization will update here depending on what
-				game you select
+				<Visualizer/>
       </div>
     );
   }
