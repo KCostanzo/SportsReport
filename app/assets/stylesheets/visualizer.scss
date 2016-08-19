@@ -3,10 +3,75 @@
 	justify-content: center;
 }
 
+li {
+	list-style: none;
+}
+
+#linescore {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.inning-score {
+	display: flex;
+	height: 30px;
+	width: 30px;
+	border: solid gray;
+	border-width: 0px 0px 2px 0px;
+	justify-content: center;
+	align-items: center;
+}
+
+.inning-score.team-abbrev {
+	width: 40px;
+	border-right: 2px solid gray;
+}
+
+.inning-score.empty {
+	border: none;
+	padding-bottom: 2px;
+}
 
 #visualizer_container {
 	display: flex;
 	border: 1px solid black;
 	height: 35em;
 	width: 40em;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	background: white;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#batter {
+	height: 75px;
+	width: 75px;
+	border: 2px solid black;
+
+}
+
+#pitcher {
+	height: 75px;
+	width: 75px;
+	border: 2px solid black;
+
+}
+
+#score-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 90%;
+}
+
+#home-score {
+	width: 80px;
+	height: 80px;
+}
+
+#away-score {
+	width: 80px;
+	height: 80px;
 }
