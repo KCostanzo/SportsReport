@@ -57,7 +57,8 @@ var VisualItem = React.createClass({
 			
 			var inning_num = 1;
 
-			this.state.currentGame.linescore.inning.forEach(function (inning) {
+if (this.state.currentGame.linescore.inning.length > 0){	
+		this.state.currentGame.linescore.inning.forEach(function (inning) {
 				var home = inning.home;
 				var away = inning.away;
 
@@ -73,7 +74,7 @@ var VisualItem = React.createClass({
 					</div>
 				</li>);
 				inning_num += 1;
-			});
+			});}
 
 			while (inningArray.length < 11) {
 				if (inning_num === 10) {
