@@ -35,7 +35,7 @@ var VisualItem = React.createClass({
 
 	render: function() {
 
-		if ((this.state.active) && (!this.state.currentGame.winning_pitcher)) {
+		if ((this.state.active) && (this.state.currentGame.status.status === "In Progress")) {
 			var pitcher = this.state.currentGame.pitcher.last + ', ' + this.state.currentGame.pitcher.first;
 			var era = this.state.currentGame.pitcher.era;
 			var batter = this.state.currentGame.batter.last + ', ' + this.state.currentGame.batter.first;
@@ -228,6 +228,20 @@ var VisualItem = React.createClass({
 					</div>
 					);
 
+		} else if (this.state.active && (this.state.currentGame.status.status ==='Preview' || this.state.currentGame.status.status === 'Pre-Game' || this.state.currentGame.status.status === 'Warmup')) {
+				var homeTeam = this.state.currentGame.home_team_name;
+				var awayTeam = this.state.currentGame.away_team_name;
+
+
+				return (
+					<div id="visualizer_container">
+						<div id='score-container'>
+							<div id='home-score'> <div>{homeTeam}</div>  <div>0</div></div>
+							
+							<div id='away-score'><div>{awayTeam}</div>  <div>0</div></div>
+						</div>
+					</div>
+					);
 		} else {
 			return (<div>Click on a Game!</div>);
 		}
