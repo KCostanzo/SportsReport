@@ -47,10 +47,10 @@ var VisualItem = React.createClass({
 
 					</div>
 					<div className="inning-score team-abbrev">
-						{this.state.currentGame.home_name_abbrev}
+						{this.state.currentGame.away_name_abbrev}
 					</div>
 					<div className="inning-score team-abbrev">
-						{this.state.currentGame.away_name_abbrev}
+						{this.state.currentGame.home_name_abbrev}
 					</div>
 				</li>
 			];
@@ -66,10 +66,10 @@ if (this.state.currentGame.linescore.inning.length > 0){
 						{inning_num}
 					</div>
 					<div className="inning-score">
-						{home}
+						{away}
 					</div>
 					<div className="inning-score">
-						{away}
+						{home}
 					</div>
 				</li>);
 				inning_num += 1;
@@ -97,14 +97,14 @@ if (this.state.currentGame.linescore.inning.length > 0){
 
 			inningArray.push(<li>
 				<div className="inning-score">H</div>
-				<div className="inning-score">{homeHits}</div>
 				<div className="inning-score">{awayHits}</div>
+				<div className="inning-score">{homeHits}</div>
 			</li>);
 
 			inningArray.push(<li>
 				<div className="inning-score">E</div>
-				<div className="inning-score">{homeErrors}</div>
 				<div className="inning-score">{awayErrors}</div>
+				<div className="inning-score">{homeErrors}</div>
 			</li>);
 
 			return (
