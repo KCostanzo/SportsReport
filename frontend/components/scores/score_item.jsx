@@ -77,10 +77,6 @@ var ScoreItem = React.createClass({
 	},
 
 	activateVisuals: function() {
-		// debugger;
-		// VisualItem.setGame(this.props.score);
-		// Index.setGame(this.props.score);
-
 		ScoreAction.setGame(this.props.score);
 	},
 

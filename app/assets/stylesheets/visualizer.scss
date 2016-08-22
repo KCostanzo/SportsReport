@@ -3,10 +3,101 @@
 	justify-content: center;
 }
 
+li {
+	list-style: none;
+}
+
+#linescore {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.inning-score {
+	display: flex;
+	height: 30px;
+	width: 30px;
+	border: solid gray;
+	border-width: 0px 0px 2px 0px;
+	justify-content: center;
+	align-items: center;
+}
+
+.inning-score.team-abbrev {
+	width: 40px;
+	border-right: 2px solid gray;
+}
+
+.inning-score.empty {
+	border: none;
+	padding-bottom: 2px;
+}
 
 #visualizer_container {
 	display: flex;
 	border: 1px solid black;
 	height: 35em;
 	width: 40em;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	background: #000066;
+	opacity: 50%;
+	border-radius: 5px 5px 5px 5px;
+	color: #e6e6e6;
+}
+
+#batter {
+	height: 75px;
+	width: 90%;
+	border: solid gray;
+	border-width: 2px 0px 2px 0px;
+	font-size: 20px;
+	background: #000033;
+	margin-bottom: 40px;
+}
+
+#pitcher {
+	height: 75px;
+	width: 90%;
+	border: solid gray;
+	border-width: 2px 0px 2px 0px;
+	font-size: 20px;
+	background: #000033;
+}
+
+#score-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 90%;
+}
+
+#home-score {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 30px;
+	width: 180px;
+	height: 100px;
+	border-right: 2px solid black;
+}
+
+#home-score > * {
+	display: flex;
+	justify-content: center;
+}
+
+#away-score > * {
+	display: flex;
+	justify-content: center;
+}
+
+#away-score {
+	display: flex;
+	font-size: 30px;
+	justify-content: center;
+	flex-direction: column;
+	width: 180px;
+	height: 100px;
 }
