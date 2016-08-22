@@ -5,7 +5,7 @@ var Dispatcher = require('../dispatcher/dispatcher.js');
 var ScoreStore = new Store(Dispatcher);
 
 var _scores = {};
-var _currentGame = {};
+var _currentGame = null;
 
 var setGame = function(game) {
 	_currentGame = game;
@@ -17,7 +17,7 @@ var resetScores = function(scores) {
 	scores.data.games.game.forEach(function(score) {
 		_scores[score.id] = score;
 	});
-	
+
 	ScoreStore.__emitChange();
 };
 

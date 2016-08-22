@@ -4,7 +4,7 @@ var ScoreStore = require('../stores/score_store');
 
 var VisualItem = React.createClass({
 	getInitialState: function() {
-		return { currentGame: {}, active: false };
+		return { currentGame: null, active: false };
 	},
 
 	componentDidMount: function() {
@@ -13,7 +13,10 @@ var VisualItem = React.createClass({
 
 	scoreChange: function() {
 		this.setState({currentGame: ScoreStore.currentGame()});
-		this.setState({ active: true });
+		// if (this.state.currentGame && this.state.currentGame.status.status !== "Preview") {
+			// console.log(this.state.currentGame);
+			this.setState({ active: true });
+		// }
 	},
 
 	componentWillUnmount: function() {
@@ -33,7 +36,6 @@ var VisualItem = React.createClass({
 	render: function() {
 
 		if (this.state.active) {
-
 			var pitcher = this.state.currentGame.pitcher.last + ', ' + this.state.currentGame.pitcher.first;
 			var era = this.state.currentGame.pitcher.era;
 			var batter = this.state.currentGame.batter.last + ', ' + this.state.currentGame.batter.first;
@@ -107,8 +109,9 @@ var VisualItem = React.createClass({
 			return (
 				<div id="visualizer_container">
 					<div id='score-container'>
-						<div id='home-score'>{homeTeam} {homeScore}</div>
-						<div id='away-score'>{awayTeam} {awayScore}</div>
+						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
+						
+						<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
 					</div>
 
 					<ul id="linescore">
