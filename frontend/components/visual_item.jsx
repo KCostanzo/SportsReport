@@ -54,10 +54,10 @@ var VisualItem = React.createClass({
 					</div>
 				</li>
 			];
-			
+
 			var inning_num = 1;
 
-if (this.state.currentGame.linescore.inning.length > 0){	
+if (this.state.currentGame.linescore.inning.length > 0){
 		this.state.currentGame.linescore.inning.forEach(function (inning) {
 				var home = inning.home;
 				var away = inning.away;
@@ -111,9 +111,10 @@ if (this.state.currentGame.linescore.inning.length > 0){
 			return (
 				<div key={this.state.currentGame.id} id="visualizer_container">
 					<div id='score-container'>
-						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
 
 						<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
+						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
+
 					</div>
 
 					<ul id="linescore">
