@@ -46,7 +46,7 @@ var ScoreItem = React.createClass({
 				{inning}  {inningState} {outs} Outs
 				</div>
 			);
-		} else if (gameStatus === 'Preview'){
+		} else if ((gameStatus === 'Preview') || gameStatus === 'Pre-Game') {
 			return <div className='diff-status'>{time} {zone}</div>;
 		} else {
 			return <div className='diff-status'>Final</div>;
