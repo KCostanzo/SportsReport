@@ -38,8 +38,9 @@ var VisualItem = React.createClass({
 		if ((this.state.active) && (this.state.currentGame.status.status === "In Progress")) {
 			var pitcher = this.state.currentGame.pitcher.last + ', ' + this.state.currentGame.pitcher.first;
 			var era = this.state.currentGame.pitcher.era;
-			var batter = this.state.currentGame.batter.last + ', ' + this.state.currentGame.batter.first;
-			var batter_stats = this.state.currentGame.batter.avg + ' ' + this.state.currentGame.batter.pos;
+			var batter = this.state.currentGame.batter.last + ', ' + this.state.currentGame.batter.first + ' ' + this.state.currentGame.batter.pos;
+			var batter_ingame_stats = this.state.currentGame.batter.h + '-' + this.state.currentGame.batter.ab;
+			var batter_stats = this.state.currentGame.batter.avg + ', hr\'s:' + this.state.currentGame.batter.hr + ', rbi\'s:' + this.state.currentGame.batter.rbi;
 
 			var inningArray = [
 				<li>
@@ -56,24 +57,25 @@ var VisualItem = React.createClass({
 			];
 			var inning_num = 1;
 
-if (this.state.currentGame.linescore.inning.length > 0){	
-		this.state.currentGame.linescore.inning.forEach(function (inning) {
-				var home = inning.home;
-				var away = inning.away;
+			if (this.state.currentGame.linescore.inning.length > 0){	
+				this.state.currentGame.linescore.inning.forEach(function (inning) {
+						var home = inning.home;
+						var away = inning.away;
 
-				inningArray.push(<li>
-					<div className="inning-score">
-						{inning_num}
-					</div>
-					<div className="inning-score">
-						{away}
-					</div>
-					<div className="inning-score">
-						{home}
-					</div>
-				</li>);
-				inning_num += 1;
-			});}
+						inningArray.push(<li>
+							<div className="inning-score">
+								{inning_num}
+							</div>
+							<div className="inning-score">
+								{away}
+							</div>
+							<div className="inning-score">
+								{home}
+							</div>
+						</li>);
+						inning_num += 1;
+				});
+			}
 
 			while (inningArray.length < 11) {
 				if (inning_num === 10) {
@@ -123,7 +125,9 @@ if (this.state.currentGame.linescore.inning.length > 0){
 					</div>
 
 					<div id="batter">
-						{batter}, {batter_stats}
+						Now Batting <br/>
+						{batter}, {batter_ingame_stats} <br/>
+						{batter_stats}
 					</div>
 				</div>
 				);
