@@ -55,9 +55,10 @@ var VisualItem = React.createClass({
 					</div>
 				</li>
 			];
+
 			var inning_num = 1;
 
-			if (this.state.currentGame.linescore.inning.length > 0){	
+			if (this.state.currentGame.linescore.inning.length > 0){
 				this.state.currentGame.linescore.inning.forEach(function (inning) {
 						var home = inning.home;
 						var away = inning.away;
@@ -112,9 +113,10 @@ var VisualItem = React.createClass({
 			return (
 				<div key={this.state.currentGame.id} id="visualizer_container">
 					<div id='score-container'>
-						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
-						
+
 						<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
+						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
+
 					</div>
 
 					<ul id="linescore">
@@ -218,7 +220,7 @@ var VisualItem = React.createClass({
 					<div id="visualizer_container">
 						<div id='score-container'>
 							<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
-							
+
 							<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
 						</div>
 
@@ -236,15 +238,33 @@ var VisualItem = React.createClass({
 		} else if (this.state.active && (this.state.currentGame.status.status ==='Preview' || this.state.currentGame.status.status === 'Pre-Game' || this.state.currentGame.status.status === 'Warmup')) {
 				var homeTeam = this.state.currentGame.home_team_name;
 				var awayTeam = this.state.currentGame.away_team_name;
+				var location = this.state.currentGame.location;
+				var start_time = this.state.currentGame.time;
+				var away_pitcher = this.state.currentGame.away_probable_pitcher.last + ', ' +
+													this.state.currentGame.away_probable_pitcher.first + ' ERA: ' +
+													this.state.currentGame.away_probable_pitcher.era + ' W/L: ' +
+													this.state.currentGame.away_probable_pitcher.wins + '-' +
+													this.state.currentGame.away_probable_pitcher.losses;
 
+				var home_pitcher = this.state.currentGame.home_probable_pitcher.last + ', ' +
+													this.state.currentGame.home_probable_pitcher.first + ' ERA: ' +
+													this.state.currentGame.home_probable_pitcher.era + ' W/L: ' +
+													this.state.currentGame.home_probable_pitcher.wins + '-' +
+													this.state.currentGame.home_probable_pitcher.losses;
+				var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
+				var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
 
 				return (
-					<div id="visualizer_container">
+					<div id="visualizer_container" className='pregame'>
+						<div id='pregame-info'>{location} {start_time}</div>
 						<div id='score-container'>
-							<div id='home-score'> <div>{homeTeam}</div>  <div>0</div></div>
-							
+							<div className='record'>{away_record}</div>
 							<div id='away-score'><div>{awayTeam}</div>  <div>0</div></div>
+							<div id='home-score'><div>{homeTeam}</div>  <div>0</div></div>
+							<div className='record'>{home_record}</div>
 						</div>
+						<div id='pitcher'>{away_pitcher}</div>
+						<div id='pitcher'>{home_pitcher}</div>
 					</div>
 					);
 		} else {
