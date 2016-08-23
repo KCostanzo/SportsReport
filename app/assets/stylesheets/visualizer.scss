@@ -47,9 +47,13 @@ li {
 	color: #e6e6e6;
 }
 
+#visualizer_container.pregame {
+	justify-content: flex-start;
+}
+
 #batter {
 	height: 75px;
-	width: 90%;
+	width: 70%;
 	border: solid gray;
 	border-width: 2px 0px 2px 0px;
 	font-size: 20px;
@@ -59,11 +63,13 @@ li {
 
 #pitcher {
 	height: 75px;
-	width: 90%;
+	width: 70%;
 	border: solid gray;
 	border-width: 2px 0px 2px 0px;
 	font-size: 20px;
 	background: #000033;
+	border-radius: 5px 5px 5px 5px;
+	margin-top: 14px;
 }
 
 #score-container {
@@ -101,4 +107,15 @@ li {
 	height: 100px;
 	border-right: 2px solid black;
 
+}
+
+.record {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#pregame-info {
+	margin-bottom: 10px;
+	margin-top: 20px;
 }
