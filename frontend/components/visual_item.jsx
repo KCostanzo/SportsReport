@@ -203,6 +203,8 @@ var VisualItem = React.createClass({
 				var awayTeam = this.state.currentGame.away_team_name;
 				var homeScore = this.state.currentGame.linescore.r.home;
 				var awayScore = this.state.currentGame.linescore.r.away;
+				var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
+				var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
 
 				inningArray.push(<li>
 					<div className="inning-score">H</div>
@@ -217,17 +219,19 @@ var VisualItem = React.createClass({
 				</li>);
 
 				return (
-					<div id="visualizer_container">
-						<div id='score-container'>
-							<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
+					<div id="visualizer_container" className='postgame'>
 
+						<div id='score-container' className='postgame'>
+							<div className='record'>{away_record}</div>
 							<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
+							<div id='home-score'><div>{homeTeam}</div>  <div>{homeScore}</div></div>
+							<div className='record'>{home_record}</div>
 						</div>
 
-						<ul id="linescore">
+						<ul id="linescore" className='postgame'>
 							{inningArray}
 						</ul>
-						<div id="pitcher">
+						<div id="pitcher" className='postgame'>
 							WP: {winning_pitcher}  &nbsp; {w_wins}-{w_losses} <br/>
 							LP: {losing_pitcher}  &nbsp; {l_wins}-{l_losses} <br/>
 							Save: {save_pitcher}  &nbsp; s({saves})
