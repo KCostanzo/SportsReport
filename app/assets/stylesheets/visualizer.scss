@@ -12,6 +12,10 @@ li {
 	justify-content: flex-start;
 }
 
+#linescore.postgame {
+	margin-bottom: 40px;
+}
+
 .inning-score {
 	display: flex;
 	height: 30px;
@@ -47,6 +51,10 @@ li {
 	color: #e6e6e6;
 }
 
+#visualizer_container.postgame {
+	justify-content: flex-start;
+}
+
 #visualizer_container.pregame {
 	justify-content: flex-start;
 }
@@ -77,6 +85,10 @@ li {
 	flex-direction: row;
 	justify-content: center;
 	width: 90%;
+}
+
+#score-container.postgame {
+	margin-bottom: 30px;
 }
 
 #home-score {
