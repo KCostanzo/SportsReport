@@ -7,7 +7,7 @@ var Navbar = React.createClass({
   render: function() {
     return (
       <div className="navbar-container">
-        <li className="logo">Logo</li>
+        <li className="logo">SportsReport</li>
         <ul>
           <li>Basketball</li>
           <li>Football</li>
