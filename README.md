@@ -1,5 +1,7 @@
 # SportsReport
 
+###[Live link](https://sports-report.herokuapp.com/)
+
 
 # Minimum Viable Product
 
@@ -31,6 +33,20 @@
 
 [data]: ./data/DataVisualWire.png
 
+## Screenshots
+
+### Post-game info for all games that have finished
+
+![postgame]
+
+[postgame]: ./data/Postgame.png
+
+### Pre-game info for games that have not started
+
+![pregame]
+
+[pregame]: ./data/Pregame.png
+
 # Phase 1: React / Front End Basics
 
 - [ ] Create Project
@@ -45,4 +61,9 @@
 # Phase 3: Data Visualization
 
 - [ ] Create Game-Specific Data Visualizations
-- [ ] Complete Steps To Make Into Chrome Extension 
+- [ ] Complete Steps To Make Into Chrome Extension
+
+# Technologies Used
+
+- [ ] React
+- [ ] MLB API

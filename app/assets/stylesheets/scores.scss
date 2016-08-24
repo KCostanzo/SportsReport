@@ -1,6 +1,6 @@
 .scores-container {
   position: fixed;
-  height: 80px;
+  height: 100px;
   top: 45px;
   border-bottom: 2px solid black;
   width: 100%;
@@ -66,4 +66,9 @@
   font-size: .5em;
   font-weight: 700;
   letter-spacing: .05em;
+}
+
+.scores-container::-webkit-scrollbar {
+  width: 0em;
+  // background-color: rgba(0,0,0,1);
 }
