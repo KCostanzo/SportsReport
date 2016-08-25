@@ -10,7 +10,7 @@ module.exports = {
   BOS: 'http://i.imgur.com/fo8gY6U.jpg',
   PIT: 'http://i.imgur.com/3mwp2uQ.jpg',
   PHI: 'http://i.imgur.com/I9iu737.jpg',
-  WAS: 'http://i.imgur.com/wIGjxqq.jpg',
+  WSH: 'http://i.imgur.com/wIGjxqq.jpg',
   ARI: 'http://i.imgur.com/OB33lAg.jpg',
   CLE: 'http://i.imgur.com/0Z8CXRr.jpg',
   HOU: 'http://i.imgur.com/yMYrDxD.jpg',

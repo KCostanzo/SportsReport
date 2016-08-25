@@ -1,5 +1,6 @@
 var React = require('react');
 var ScoreStore = require('../stores/score_store');
+var Images = require('../constants/images');
 
 
 var VisualItem = React.createClass({
@@ -97,7 +98,11 @@ var VisualItem = React.createClass({
 			var awayTeam = this.state.currentGame.away_team_name;
 			var homeScore = this.state.currentGame.linescore.r.home;
 			var awayScore = this.state.currentGame.linescore.r.away;
-
+			var a_logo = this.state.currentGame.away_name_abbrev;
+			var h_logo = this.state.currentGame.home_name_abbrev;
+			var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
+			var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
+			
 			inningArray.push(<li>
 				<div className="inning-score">H</div>
 				<div className="inning-score">{awayHits}</div>
@@ -114,8 +119,10 @@ var VisualItem = React.createClass({
 				<div key={this.state.currentGame.id} id="visualizer_container">
 					<div id='score-container'>
 
+						<div className='record'><img id='logo' src={Images[a_logo]}></img>{away_record}</div>
 						<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
-						<div id='home-score'> <div>{homeTeam}</div>  <div>{homeScore}</div></div>
+						<div id='home-score'><div>{homeTeam}</div>  <div>{homeScore}</div></div>
+						<div className='record'><img id='logo' src={Images[h_logo]}></img>{home_record}</div>
 
 					</div>
 
@@ -205,6 +212,8 @@ var VisualItem = React.createClass({
 				var awayScore = this.state.currentGame.linescore.r.away;
 				var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
 				var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
+				var a_logo = this.state.currentGame.away_name_abbrev;
+				var h_logo = this.state.currentGame.home_name_abbrev;
 
 				inningArray.push(<li>
 					<div className="inning-score">H</div>
@@ -222,10 +231,10 @@ var VisualItem = React.createClass({
 					<div id="visualizer_container" className='postgame'>
 
 						<div id='score-container' className='postgame'>
-							<div className='record'>{away_record}</div>
+							<div className='record'><img id='logo' src={Images[a_logo]}></img>{away_record}</div>
 							<div id='away-score'><div>{awayTeam}</div>  <div>{awayScore}</div></div>
 							<div id='home-score'><div>{homeTeam}</div>  <div>{homeScore}</div></div>
-							<div className='record'>{home_record}</div>
+							<div className='record'><img id='logo' src={Images[h_logo]}></img>{home_record}</div>
 						</div>
 
 						<ul id="linescore" className='postgame'>
@@ -257,15 +266,18 @@ var VisualItem = React.createClass({
 													this.state.currentGame.home_probable_pitcher.losses;
 				var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
 				var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
+				var a_logo = this.state.currentGame.away_name_abbrev;
+				var h_logo = this.state.currentGame.home_name_abbrev;
+
 
 				return (
 					<div id="visualizer_container" className='pregame'>
 						<div id='pregame-info'>{location} {start_time}</div>
 						<div id='score-container'>
-							<div className='record'>{away_record}</div>
+							<div className='record'><img id='logo' src={Images[a_logo]}></img>{away_record}</div>
 							<div id='away-score'><div>{awayTeam}</div>  <div>0</div></div>
 							<div id='home-score'><div>{homeTeam}</div>  <div>0</div></div>
-							<div className='record'>{home_record}</div>
+							<div className='record'><img id='logo' src={Images[h_logo]}></img>{home_record}</div>
 						</div>
 						<div id='pitcher'>{away_pitcher}</div>
 						<div id='pitcher'>{home_pitcher}</div>
