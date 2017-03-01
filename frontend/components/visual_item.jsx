@@ -15,7 +15,7 @@ var VisualItem = React.createClass({
 	scoreChange: function() {
 		this.setState({currentGame: ScoreStore.currentGame()});
 		// if (this.state.currentGame && this.state.currentGame.status.status !== "Preview") {
-			// console.log(this.state.currentGame);
+			console.log(this.state.currentGame);
 		this.setState({ active: true });
 		// }
 	},

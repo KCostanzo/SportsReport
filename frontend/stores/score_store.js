@@ -13,6 +13,7 @@ var setGame = function(game) {
 };
 
 var resetScores = function(scores) {
+	console.log(scores);
 	_scores = {};
 	scores.data.games.game.forEach(function(score) {
 		_scores[score.id] = score;
