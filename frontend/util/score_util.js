@@ -20,6 +20,9 @@ var ScoreUtil = {
 				ScoreServerActions.getScores(scores);
 			}
 		});
+
+
+		//url down, need replacement
 	}
 };
 
