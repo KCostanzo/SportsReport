@@ -12,9 +12,9 @@ var ScoreUtil = {
 		}
 
 		$.ajax({
-			headers: {
-                'Access-Control-Allow-Origin': '*'
-            },
+            dataType: 'JSONP',
+            async: false,
+            crossDomain: true,
 			method: 'GET',
 			url: 'http://gd2.mlb.com/components/game/mlb/year_' +
 						year + '/month_' + month +
