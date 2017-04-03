@@ -12,6 +12,8 @@ var ScoreUtil = {
 		}
 
 		$.ajax({
+			crossDomain: true,
+    		dataType: 'jsonp',
 			method: 'GET',
 			url: 'http://gd2.mlb.com/components/game/mlb/year_' +
 						year + '/month_' + month +
