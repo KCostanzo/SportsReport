@@ -11,10 +11,13 @@ var ScoreUtil = {
 			month = '0' + month;
 		}
 
+   //          dataType: 'JSONP',
+   //          async: false,
+   //          crossDomain: true,
+			// headers: {
+   //              'Access-Control-Allow-Origin': '*'
+   //          },
 		$.ajax({
-            dataType: 'JSONP',
-            async: false,
-            crossDomain: true,
 			method: 'GET',
 			url: 'http://gd2.mlb.com/components/game/mlb/year_' +
 						year + '/month_' + month +

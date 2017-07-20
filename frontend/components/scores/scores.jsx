@@ -26,6 +26,10 @@ var Scores = React.createClass({
     this.scoreListener.remove();
   },
 
+
+    //let scores = this.state.scores.map(s => {
+      //return <ScoreItem score={s} key={s.id}/>;
+    // });
   render: function() {
     var scores = this.state.scores.map(function(score) {
       return <ScoreItem score={score} key={score.id} />;
