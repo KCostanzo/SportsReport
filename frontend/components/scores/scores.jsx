@@ -18,7 +18,7 @@ var Scores = React.createClass({
     TempUtil.fetchAllScores();
     setInterval(() => {
       TempUtil.fetchAllScores();
-    }, 30000);
+    }, 10000);
   },
 
   // combineCalls: function() {
