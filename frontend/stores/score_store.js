@@ -13,7 +13,7 @@ var setGame = function(game) {
 };
 
 var resetScores = function(scores) {
-	console.log("scores " + scores);
+	// console.log("scores " + scores);
 	_scores = {};
 
 	if (!scores) {
@@ -32,6 +32,7 @@ ScoreStore.all = function() {
 	for (var id in _scores) {
 		scores.push(_scores[id]);
 	}
+	console.log("scorestore.all");
 
 	return scores;
 };

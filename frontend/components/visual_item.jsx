@@ -35,6 +35,9 @@ var VisualItem = React.createClass({
 	// },
 
 	render: function() {
+		if (!this.state.currentGame){
+			return (<div>Click on a Game!</div>);
+		}
 
 		if ((this.state.active) && (this.state.currentGame.status.status === "In Progress")) {
 			var pitcher = this.state.currentGame.pitcher.last + ', ' + this.state.currentGame.pitcher.first;
@@ -288,8 +291,6 @@ var VisualItem = React.createClass({
 						<div id='pitcher'>{homeTeam} probable pitcher:  {home_pitcher}</div>
 					</div>
 					);
-		} else {
-			return (<div>Click on a Game!</div>);
 		}
 	}
 

@@ -26,6 +26,8 @@ var ScoreUtil = {
 				ScoreServerActions.getScores(scores);
 			}
 		});
+
+		console.log("fetchAllScores");
 	}
 };
 
