@@ -102,7 +102,7 @@ var VisualItem = React.createClass({
 			var h_logo = this.state.currentGame.home_name_abbrev;
 			var home_record = this.state.currentGame.home_win + '-' + this.state.currentGame.home_loss;
 			var away_record = this.state.currentGame.away_win + '-' + this.state.currentGame.away_loss;
-			
+
 			inningArray.push(<li>
 				<div className="inning-score">H</div>
 				<div className="inning-score">{awayHits}</div>
@@ -114,6 +114,8 @@ var VisualItem = React.createClass({
 				<div className="inning-score">{awayErrors}</div>
 				<div className="inning-score">{homeErrors}</div>
 			</li>);
+
+			// -------------------------------------- ACTIVE GAME RETURN
 
 			return (
 				<div key={this.state.currentGame.id} id="visualizer_container">
@@ -227,6 +229,8 @@ var VisualItem = React.createClass({
 					<div className="inning-score">{awayErrors}</div>
 				</li>);
 
+				// --------------------------- POSTGAME RETURN
+
 				return (
 					<div id="visualizer_container" className='postgame'>
 
@@ -269,6 +273,7 @@ var VisualItem = React.createClass({
 				var a_logo = this.state.currentGame.away_name_abbrev;
 				var h_logo = this.state.currentGame.home_name_abbrev;
 
+				// --------------------------------- PREGAME RETURN
 
 				return (
 					<div id="visualizer_container" className='pregame'>
@@ -279,8 +284,8 @@ var VisualItem = React.createClass({
 							<div id='home-score'><div>{homeTeam}</div>  <div>0</div></div>
 							<div className='record'><img id='logo' src={Images[h_logo]}></img>{home_record}</div>
 						</div>
-						<div id='pitcher'>{away_pitcher}</div>
-						<div id='pitcher'>{home_pitcher}</div>
+						<div id='pitcher'>{awayTeam} probable pitcher:  {away_pitcher}</div>
+						<div id='pitcher'>{homeTeam} probable pitcher:  {home_pitcher}</div>
 					</div>
 					);
 		} else {
