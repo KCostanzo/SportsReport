@@ -5,6 +5,7 @@ var ScoreStore = require('../../stores/score_store');
 var ScoreItem = require('./score_item');
 
 var TempUtil = require('../../util/score_util.js');
+var ScoreActions = require('../../actions/score_server_actions.js');
 
 var Scores = React.createClass({
   getInitialState: function() {
@@ -15,7 +16,8 @@ var Scores = React.createClass({
     this.scoreListener = ScoreStore.addListener(this.scoreChange);
     //call API to fill store
     TempUtil.fetchAllScores();
-    setInterval(TempUtil.fetchAllScores(), 60000);
+    setInterval(ScoreActions.emptyScores(), 30000);
+    setInterval(TempUtil.fetchAllScores(), 300001);
   },
 
   scoreChange: function() {

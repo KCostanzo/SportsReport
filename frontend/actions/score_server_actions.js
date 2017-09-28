@@ -9,6 +9,13 @@ var ScoreActions = {
 		});
 	},
 
+	emptyScores: () => {
+		Dispatcher.dispatch({
+			actionType: "EMPTYSCORES",
+			scores: "none"
+		});
+	},
+
 	setGame: function(game) {
 		Dispatcher.dispatch({
 			actionType: ScoreConstants.SETGAME,

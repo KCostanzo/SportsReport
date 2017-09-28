@@ -13,11 +13,16 @@ var setGame = function(game) {
 };
 
 var resetScores = function(scores) {
-	console.log(scores);
+	console.log("scores " + scores);
 	_scores = {};
-	scores.data.games.game.forEach(function(score) {
-		_scores[score.id] = score;
-	});
+
+	if (!scores) {
+		console.log("undefined");
+	} else {
+		scores.data.games.game.forEach(function(score) {
+			_scores[score.id] = score;
+		});
+	}
 
 	ScoreStore.__emitChange();
 };
@@ -39,6 +44,9 @@ ScoreStore.__onDispatch = function(payload) {
 	switch(payload.actionType) {
 		case StoreConstants.ALLSCORES:
 			resetScores(payload.scores);
+			break;
+		case "EMPTYSCORES":
+			resetScores();
 			break;
 		case StoreConstants.SETGAME:
 			setGame(payload.game);
