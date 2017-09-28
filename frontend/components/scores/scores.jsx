@@ -16,9 +16,14 @@ var Scores = React.createClass({
     this.scoreListener = ScoreStore.addListener(this.scoreChange);
     //call API to fill store
     TempUtil.fetchAllScores();
-    setInterval(ScoreActions.emptyScores(), 30000);
-    setInterval(TempUtil.fetchAllScores(), 300001);
+    setInterval(TempUtil.fetchAllScores(), 60001);
   },
+
+  // combineCalls: function() {
+  //   ScoreActions.emptyScores();
+  //   console.log("scores emptied");
+  //   TempUtil.fetchAllScores();
+  // },
 
   scoreChange: function() {
     this.setState({scores: ScoreStore.all()});
